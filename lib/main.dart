@@ -3,12 +3,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:marvelwiki/features/characters/presentation/pages/characters_home_page.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:marvelwiki/shared/service_locator.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   DartPluginRegistrant.ensureInitialized();
 
   await dotenv.load(fileName: "assets/.env");
+
+  Sl.init();
   runApp(const MarvelWikiApp());
 }
 
