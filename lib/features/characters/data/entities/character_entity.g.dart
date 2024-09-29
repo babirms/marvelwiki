@@ -15,6 +15,10 @@ CharacterEntity _$CharacterEntityFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['modified'] as String),
       resourceURI: json['resourceURI'] as String?,
+      urls: (json['urls'] as List<dynamic>?)?.map(UrlEntity.fromJson).toList(),
+      thumbnail: json['thumbnail'] == null
+          ? null
+          : ImageEntity.fromJson(json['thumbnail']),
     );
 
 Map<String, dynamic> _$CharacterEntityToJson(CharacterEntity instance) =>
@@ -24,4 +28,6 @@ Map<String, dynamic> _$CharacterEntityToJson(CharacterEntity instance) =>
       'description': instance.description,
       'modified': instance.modified?.toIso8601String(),
       'resourceURI': instance.resourceURI,
+      'urls': instance.urls,
+      'thumbnail': instance.thumbnail,
     };
