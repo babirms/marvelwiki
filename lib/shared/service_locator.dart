@@ -3,6 +3,7 @@ import 'package:marvelwiki/features/characters/data/datasources/characteres_remo
 import 'package:marvelwiki/features/characters/domain/repositories/characters_repository.dart';
 import 'package:marvelwiki/features/characters/domain/usecases/get_all_characters_usecase.dart';
 import 'package:marvelwiki/features/characters/domain/usecases/get_character_details_usecase.dart';
+import 'package:marvelwiki/features/characters/domain/usecases/get_featured_characters_usecase.dart';
 
 final _sl = GetIt.instance;
 
@@ -15,7 +16,6 @@ mixin Sl {
     _sl.registerSingleton<CharacteresRemoteDatasource>(
       CharacteresRemoteDatasourceImpl(),
     );
-
     _sl.registerSingleton<CharactersRepository>(
       CharactersRepositoryImpl(characteresRemoteDatasource: _sl()),
     );
@@ -24,6 +24,9 @@ mixin Sl {
     );
     _sl.registerSingleton<GetCharacterDetailsUsecase>(
       GetCharacterDetailsUsecase(_sl()),
+    );
+    _sl.registerSingleton<GetFeaturedCharactersUsecase>(
+      GetFeaturedCharactersUsecase(_sl()),
     );
   }
 }

@@ -21,6 +21,20 @@ class SuccessGetAllCharactersState extends CharactersState {
   SuccessGetAllCharactersState(this.characters);
 }
 
+// -------------- Get Featured Characters States ---------------- //
+
+class ErrorGetFeaturedCharactersState extends CharactersState {
+  final String errorMsg;
+
+  ErrorGetFeaturedCharactersState(this.errorMsg);
+}
+
+class SuccessGetFeaturedCharactersState extends CharactersState {
+  final List<CharacterEntity> characters;
+
+  SuccessGetFeaturedCharactersState(this.characters);
+}
+
 // -------------- Get Character Details States ---------------- //
 
 class CharacterDetailsPageInitialState extends CharactersState {}

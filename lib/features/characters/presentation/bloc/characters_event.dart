@@ -13,3 +13,7 @@ class OnGettingCharacterDetailsEvent extends CharactersEvent {
 
   OnGettingCharacterDetailsEvent(this.characterId);
 }
+
+class OnGettingFeaturedCharactersEvent extends CharactersEvent {
+  OnGettingFeaturedCharactersEvent();
+}
