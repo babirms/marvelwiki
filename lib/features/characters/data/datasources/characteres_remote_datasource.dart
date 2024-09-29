@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:marvelwiki/features/characters/data/entities/character_data_wrapper_entity.dart';
 
 abstract class CharacteresRemoteDatasource {
-  Future<dynamic> getAllCharacters();
-  Future<dynamic> getCharacterById({required int characterId});
+  Future<List<CharacterDataWrapperEntity>> getAllCharacters();
+  Future<CharacterDataWrapperEntity> getCharacterById(
+      {required int characterId});
 }
 
 class CharacteresRemoteDatasourceImpl extends CharacteresRemoteDatasource {
@@ -17,13 +19,14 @@ class CharacteresRemoteDatasourceImpl extends CharacteresRemoteDatasource {
   CharacteresRemoteDatasourceImpl();
 
   @override
-  Future getAllCharacters() {
+  Future<List<CharacterDataWrapperEntity>> getAllCharacters() {
     // TODO: implement getAllCharacters
     throw UnimplementedError();
   }
 
   @override
-  Future getCharacterById({required int characterId}) {
+  Future<CharacterDataWrapperEntity> getCharacterById(
+      {required int characterId}) {
     // TODO: implement getCharacterById
     throw UnimplementedError();
   }
