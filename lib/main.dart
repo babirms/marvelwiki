@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:marvelwiki/features/characters/presentation/pages/characters_home_page.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: ".env");
   runApp(const MarvelWikiApp());
 }
 
