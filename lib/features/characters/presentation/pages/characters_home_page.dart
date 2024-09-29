@@ -12,7 +12,10 @@ class _CharactersHomePageState extends State<CharactersHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text('char list'),
+        child: ElevatedButton(
+          child: Text('Get All'),
+          onPressed: () async {},
+        ),
       ),
     );
   }
